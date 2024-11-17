@@ -54,7 +54,7 @@ optimizer:
   lr: 2e-5
 
 lr_scheduler:
-  _component_: torchtune.modules.get_cosine_schedule_with_warmup
+  _component_: torchtune.training.lr_schedulers.get_cosine_schedule_with_warmup
   num_warmup_steps: 10
 
 loss:
@@ -62,7 +62,7 @@ loss:
 
 # Fine-tuning arguments
 batch_size: 4
-epochs: 3
+epochs: 1
 max_steps_per_epoch: null
 gradient_accumulation_steps: 4
 compile: False  # pytorch compile, set to true for perf/memory improvement
